@@ -3,40 +3,51 @@
 <!--
     Written by Carleigh Smith
     10Jan2022
-    For Intro to Programming
-    To test the use of tags in html as well as some beginning javascript functions.
+    For Intro to Programming,
+    to test the use of tags in html as well as some beginning javascript functions.
     The javascript functions tested are document.write() and alert().
     carsmit4@uat.edu
 -->
 
 <head>
+    
+    <script src="code.js"></script>
     <!--This is the head portion, it is behind the scenes...-->
     <title>
         Sadie's UATSpace Page
     </title>
+    <style>
+        body {
+            background-image: url("https://64.media.tumblr.com/b741d57ee7db21edd031a9f6d22b8dd9/tumblr_obqye3hZmR1ufkj40o1_1280.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
-
+<center>
 <body>
-    <img src="UATspaceLogo-1.jpg">
+    <img src="https://synchronic.uat.edu/courses/4657/files/626110/preview"> 
     <h1>UAT Space Program</h1>
 
     <script>
         //The document.write prints the text on the main body of the webpage.
-        document.write("This is a test of the document.write function.")
+        document.write("This is a test of the document.write function.");
 
         /*The alert function opens an alert window.
         The text within the alert window originates from inside the parentheses.*/
-
-        var alertText = "This is a test of the alert function(). It is stored within the alertText variable."
-        alert(alertText)
+        
+        //var alertText = "This is a test of the alert function(). It is stored within the alertText variable."
+        //alert(alertText);
+    
     </script>
     <p>
-        This is a test of the paragraph tags. A paragraph is more than one sentence long. This is a paragraph.
+        <strong>This is a test of the paragraph tags. A paragraph is more than one sentence long. This is a paragraph.</strong>
     </p>
-    <script>
-        console.log("The page has loaded completely.")
-    </script>
-    <button>
+    <br>
+    <br>
+    <div id="blastOffText"><strong>Blastoff status will be presented here</div></strong>
+    <br>
+    <button onclick="blastOffTimer();">
         Start
     </button>
     <br>
@@ -45,6 +56,14 @@
     <button>
         Stop
     </button>
+<br>
+<br>
+<script>
+    /* var docText = "This is the contents of my docText variable.";
+    var addText = " And I like it!";
+    document.write(docText + addText);*/
+</script>
 </body>
+</center>
 
 </html>
