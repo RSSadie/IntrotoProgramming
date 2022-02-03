@@ -69,3 +69,44 @@ function blastOffTimer(){
         currTime = currTime - i;
     }, 10 * timeMult);
 }
+
+//Variables numWins, numLost, and numTies start at 0
+var numWins = 0;
+var numLost = 0;
+var numTies = 0;
+//Display in log "playCraps() started" when running the function playCraps()
+function playCraps(){
+console.log("playCraps() started");
+//Pick a random number, multiply by 6 and store in die1
+var die1 = Math.ceil(6 * Math.random());
+//Pick a random number, multiply by 6 and store in die2
+var die2 = Math.ceil(6 * Math.random());
+//add die1 and die2 and store in sum
+var sum = die1 + die2;
+//Display die1 on the browser at the die1Res position
+document.getElementById("die1Res").innerHTML = die1;
+//Display die2 on the browser at the die2Res position
+document.getElementById("die2Res").innerHTML = die2;
+//Display sum on the browser at the sumRes position
+document.getElementById("sumRes").innerHTML = sum;
+//If the sum is equal to 7 or 11, display "Craps, you lose!"
+if(sum == 7 || sum == 11){
+    document.getElementById("CrapsRes").innerHTML = "Craps, you lose!";
+    //Add 1 to numLost every time conditions are met
+    numLost = numLost + 1;
+    //If die1 is equal to die2, display "Doubles, you win!"
+} else if(die1 == die2 && die1 % 2 == 0){
+    document.getElementById("CrapsRes").innerHTML = "Doubles, you win!";
+    //Add 1 to numWins every time the conditions are met
+    numWins = numWins + 1;
+    //If the dice are anything else, display "Oops, it's a tie!"
+} else {
+     document.getElementById("CrapsRes").innerHTML = "Oops, it's a tie!";
+     //Add 1 to numTies every time conditions are met
+     numTies = numTies + 1;
+}
+//Scoreboard: displays amount of wins, losses, and ties
+document.getElementById("wins").innerHTML = numWins;
+document.getElementById("losses").innerHTML = numLost;
+document.getElementById("ties").innerHTML = numTies;
+}
