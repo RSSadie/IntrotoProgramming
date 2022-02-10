@@ -72,15 +72,26 @@ function blastOffTimer(){
 
 function betterCtDown(){
     console.log("testCtDown() started");
+    //variable to track time
     currTime = 50
+    //for loop to save typing
     for(var i = 0; i <= 10; i++){
         console.log(i);
         setTimeout(function(){
-            document.getElementById("blastOffText").innerHTML = currTime;
             if(currTime == 0){
+                //if we are done and need blastoff
                 document.getElementById("blastOffText").innerHTML = "Blastoff!"
+            }else if (currTime < 25){
+                //because the admiral wants this
+                document.getElementById("blastOffText").innerHTML = 
+                "Warning: Less than 1/2 way to launch, time left = " + currTime
+            } else {
+                //everything else
+                document.getElementById("blastOffText").innerHTML = currTime;
             }
+            //we are iterating by 5s
             currTime = currTime - 5;
+            //5000 to wait 5 sec between counts
         }, 5000 * i);
     }
 }
