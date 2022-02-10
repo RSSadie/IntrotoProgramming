@@ -70,6 +70,38 @@ function blastOffTimer(){
     }, 10 * timeMult);
 }
 
+function betterCtDown(){
+    console.log("testCtDown() started");
+    currTime = 50
+    for(var i = 0; i <= 10; i++){
+        console.log(i);
+        setTimeout(function(){
+            document.getElementById("blastOffText").innerHTML = currTime;
+            if(currTime == 0){
+                document.getElementById("blastOffText").innerHTML = "Blastoff!"
+            }
+            currTime = currTime - 5;
+        }, 5000 * i);
+    }
+}
+
+function test(){
+    console.log("test() started");
+    var i = 0;
+    currTime = 50;
+    while(i <=10){
+        console.log(i);
+        setTimeout(function(){
+            document.getElementById("blastOffText").innerHTML = currTime;
+            if(currTime == 0){
+                document.getElementById("blastOffText").innerHTML = "Blastoff"
+            }
+            currTime = currTime - 5;
+        }, 500 * i);
+        i = i + 1;
+    }
+}
+
 //Variables numWins, numLost, and numTies start at 0
 var numWins = 0;
 var numLost = 0;
