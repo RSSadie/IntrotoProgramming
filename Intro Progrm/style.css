@@ -13,4 +13,15 @@ body{
 .button{
     width: 150px;
     height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    border-color: skyblue;
+}
+
+.lgButton{
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    border-color: skyblue;
 }
