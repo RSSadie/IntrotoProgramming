@@ -1,15 +1,15 @@
 function start(){
     console.log("start() started");
     document.getElementById("data").rows["seconds"].innerHTML = "Reading Data...";
-    document.getElementById("startButton").disabled = true;
-    document.getElementById("stopButton").disabled = false;
+    document.getElementById("startButton").disabled= false;
+    document.getElementById("stopButton").disabled= true;
 }
 
 function stop(){
     console.log("stop() started");
     document.getElementById("data").rows["seconds"].innerHTML = "<td>Time Elapsed:</td><td>15 seconds</td>";
-    document.getElementById("startButton").disabled = false;
-    document.getElementById("stopButton").disabled = true;
+    document.getElementById("startButton").disabled= true;
+    document.getElementById("stopButton").disabled = false;
 }
 
 
@@ -171,3 +171,30 @@ function playCraps() {
     document.getElementById("ties").innerHTML = numTies;
 }
 */
+
+function playStation() {
+    console.log("playStation started");
+    mySound = new sound("Never Gonna Give You Up (Japanese Version).mp3");
+    mySound.play();
+}
+
+function playSpace() {
+    console.log("playSpace started");
+    spaceSound = new sound("8 Strangest sounds recorded in space.mp3");
+    spaceSound.play();
+}
+
+function sound(srcFile) {
+    this.sound = document.createElement("audio");
+    this.sound.src = srcFile;
+    this.sound.setAttribute("preload", "audio");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
